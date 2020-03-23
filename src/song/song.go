@@ -9,14 +9,14 @@ import (
   "log"
   "track"
   "path/filepath"
-	"playback"
+  "playback"
 )
 
 type Song struct {
-    Name            string
-    PathToInput     string
-    Length          int
-    TrackList       []track.Track
+  Name            string
+  PathToInput     string
+  Length          int
+  TrackList       []track.Track
 }
 
 // Prints the details of the Song to the console
@@ -89,7 +89,7 @@ func LoadSongFromFile(pathToInput string) Song {
   // make sure that the path exists
   file, err := os.Open(pathToInput)
   if err != nil {
-      log.Fatal(err)
+    log.Fatal(err)
   }
   defer file.Close()
   // define the new song
@@ -126,7 +126,7 @@ func LoadSongFromFile(pathToInput string) Song {
 
   //log any read errors
   if err := scanner.Err(); err != nil {
-      log.Fatal(err)
+    log.Fatal(err)
   }
   return newSong
 }
