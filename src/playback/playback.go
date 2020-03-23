@@ -15,14 +15,14 @@ import (
 
 // Initialize Audio interface before playback
 func InitializeAudio() {
-		portaudio.Initialize()
+	portaudio.Initialize()
 }
 
 // Shutdown Audio interface after playback
 func ShutdownAudio() {
-	  //wait for all buffers to flush
-    time.Sleep(300 * time.Millisecond)
-		portaudio.Terminate()
+	//wait for all buffers to flush
+	time.Sleep(300 * time.Millisecond)
+	portaudio.Terminate()
 }
 
 // Play file from disk
