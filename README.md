@@ -13,6 +13,19 @@ more specifically [gordonklaus golang port](https://github.com/gordonklaus/porta
 Please follow their installation steps if necessary.
 
 The Linux 64bit library is already part of this repo as I have used Ubuntu.
+### Prerequisites for OSX
+```
+brew install mpg123
+brew install portaudio
+go get -v github.com/gordonklaus/portaudio/...
+```
+
+### Prerequisites for Linux
+```
+sudo apt install libmpg123-dev portaudio19-dev
+go get -v github.com/gordonklaus/portaudio/...
+```
+
 
 ## Usage
 Before running please make sure that the project is in Go path:
