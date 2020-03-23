@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/signal"
 	"log"
+	"time"
 )
 
 // This file has been copied almost verbatim from
@@ -19,6 +20,8 @@ func InitializeAudio() {
 
 // Shutdown Audio interface after playback
 func ShutdownAudio() {
+	  //wait for all buffers to flush
+    time.Sleep(300 * time.Millisecond)
 		portaudio.Terminate()
 }
 
@@ -65,7 +68,7 @@ func PlayFile(fileName string) {
 	}
 
 	//assume 44100 sample rate, mono, 32 bit
-	out := make([]int32, 8192)
+	out := make([]int32, 512)
 	stream, err := portaudio.OpenDefaultStream(0, 1, 44100, len(out), &out)
 	chk(err)
 	defer stream.Close()
