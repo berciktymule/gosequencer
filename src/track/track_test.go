@@ -19,27 +19,27 @@ func ExpectToSountAt(testTrack Track, index int, shouldI bool) string {
 }
 
 func TestCorrectTiming(t *testing.T) {
-    var encounteredError = ExpectToSountAt(testTrack, 2, false)
+  var encounteredError = ExpectToSountAt(testTrack, 2, false)
 
-    if encounteredError != "" {
-       t.Errorf(encounteredError)
-    }
+  if encounteredError != "" {
+    t.Errorf(encounteredError)
+  }
 
-    encounteredError = ExpectToSountAt(testTrack, 5, true)
+  encounteredError = ExpectToSountAt(testTrack, 5, true)
 
-    if encounteredError != "" {
-       t.Errorf(encounteredError)
-    }
+  if encounteredError != "" {
+    t.Errorf(encounteredError)
+  }
 }
 
 func TestCorrectName(t *testing.T) {
-    if testTrack.Name != testName {
-       t.Errorf("Name was incorrect, got: %s, want: %s.", testName, testTrack.Name)
-    }
+  if testTrack.Name != testName {
+    t.Errorf("Name was incorrect, got: %s, want: %s.", testName, testTrack.Name)
+  }
 }
 
 func TestCorrectPath(t *testing.T) {
-    if testTrack.PathToSample != testPath {
-       t.Errorf("PathToSample was incorrect, got: %s, want: %s.", testPath, testTrack.PathToSample)
-    }
+  if testTrack.PathToSample != testPath {
+    t.Errorf("PathToSample was incorrect, got: %s, want: %s.", testPath, testTrack.PathToSample)
+  }
 }
